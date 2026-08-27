@@ -1,0 +1,38 @@
+
+> release-publisher@1.0.0 report
+> node publisher/release-publisher.mjs --report
+
+[Publisher] Starting firmware release publisher
+[Publisher] Gateway: http://127.0.0.1:7070
+[Publisher] Manifest: E:\skeleton\environment\fixtures\build_manifest.csv
+[Publisher] Database: E:\skeleton\environment\releases.duckdb
+[Publisher] Current cert: E:\skeleton\environment\keys\current\current.cert.pem
+
+[Publisher] Reading and reconciling build manifest...
+[Reconciliation] CSV rows: 40, after dedup: 37
+[Reconciliation] Withdrawn entries: 5
+[Reconciliation] Active builds after withdrawal: 27
+[Reconciliation] Publishable bundles: 3
+  - BND-101: 9 artifacts, 1201575 bytes
+  - BND-102: 10 artifacts, 2188075 bytes
+  - BND-103: 8 artifacts, 2079625 bytes
+
+[Publisher] Fetching current signing key metadata...
+[Publisher] Current key: fw-signing-2026-current
+[Publisher] Algorithm: sha256WithRSAEncryption
+
+[Publisher] Processing bundle: BND-101
+[Publisher]   Already published, using existing receipt
+[Publisher] Processing bundle: BND-102
+[Publisher]   Already published, using existing receipt
+[Publisher] Processing bundle: BND-103
+[Publisher]   Already published, using existing receipt
+
+[Publisher] Publication Results:
+
+BUNDLE BND-101 SIGNED KEY=fw-signing-2026-current
+BUNDLE BND-101 PUBLISHED RECEIPT=pub_82c9a5757dba93a265d26b9a TOKEN=token-BND-101 STATUS=PUBLISHED
+BUNDLE BND-102 SIGNED KEY=fw-signing-2026-current
+BUNDLE BND-102 PUBLISHED RECEIPT=pub_ca27047243aff259f7f845f9 TOKEN=token-BND-102 STATUS=PUBLISHED
+BUNDLE BND-103 SIGNED KEY=fw-signing-2026-current
+BUNDLE BND-103 PUBLISHED RECEIPT=pub_eb1ca2c22e4d17c5d01d01a9 TOKEN=token-BND-103 STATUS=PUBLISHED

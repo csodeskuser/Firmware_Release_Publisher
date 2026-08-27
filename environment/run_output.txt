@@ -1,0 +1,43 @@
+﻿
+> release-publisher@1.0.0 report
+> node publisher/release-publisher.mjs --report
+
+node.exe : node:internal/modules/cjs/loader:1430
+At line:1 char:1
++ & "C:\nvm4w\nodejs/node.exe" 
+"C:\nvm4w\nodejs/node_modules/npm/bin/np ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo          : NotSpecified: (node:internal/modules 
+   /cjs/loader:1430:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module 'duckdb'
+Require stack:
+- E:\skeleton\environment\lib\duckdb-wrapper.cjs
+- E:\skeleton\environment\publisher\release-publisher.mjs
+    at Function._resolveFilename 
+(node:internal/modules/cjs/loader:1430:15)
+    at defaultResolveImpl 
+(node:internal/modules/cjs/loader:1040:19)
+    at resolveForCJSWithHooks 
+(node:internal/modules/cjs/loader:1045:22)
+    at Function._load (node:internal/modules/cjs/loader:1216:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at Module.require (node:internal/modules/cjs/loader:1527:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> 
+(E:\skeleton\environment\lib\duckdb-wrapper.cjs:7:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\skeleton\\environment\\lib\\duckdb-wrapper.cjs',
+    'E:\\skeleton\\environment\\publisher\\release-publisher.mjs'
+  ]
+}
+
+Node.js v22.23.2
